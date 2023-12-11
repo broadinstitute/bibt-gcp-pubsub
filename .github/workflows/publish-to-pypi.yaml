@@ -65,7 +65,7 @@ jobs:
     needs: ["build", "provenance"]
     environment:
       name: publish
-      url: https://pypi.org/p/bibt-template
+      url: https://pypi.org/p/bibt-gcp-pubsub
     permissions:
       contents: write
       id-token: write # Needed for trusted publishing to PyPI.

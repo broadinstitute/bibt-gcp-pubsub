@@ -13,11 +13,11 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.insert(0, os.path.abspath("."))
 
-from bibt.template import __version__  # noqa: E402
+from bibt.gcp.pubsub import __version__  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
-project = "bibt-template"
+project = "bibt-gcp-pubsub"
 copyright = "2023, Matthew OBrien"
 author = "Matthew OBrien"
 version = __version__

@@ -1,71 +1,30 @@
-# What To Update
-
-- update these files / replace the `-template` name
-  - pyproject.toml
-  - CHANGELOG.md
-  - readthedocs.yml
-  - .python-version
-  - .github/workflows/publish-to-pypi.yml
-  - .envrc
-  - .bumpversion.cfg
-  - bibt/template/\* [change name of dir!]
-  - docs/modules/template.rst [change name of file!]
-  - docs/conf.py
-  - docs/index.rst
-  - docs/template.rst [change name of file!]
-
-```bash
-pyenv virtualenv 3.11.2 bibt-template
-pyenv local bibt-template
-pip install -r requirements-dev.txt
-```
-
-- Create github project
-
-```bash
-git init
-pre-commit install
-git remote add origin git@github-work:broadinstitute/bibt-template.git
-git branch -M main
-git add . && git commit -m "init commit"
-git push -u origin main
-```
-
-- Create pypi project
-- Add github to pypi project
-  - workflow: `publish-to-pypi.yml`
-  - env: `publish`
-- Create protected branch rule in github
-- Create publish environment in github project
-- Add protections for publish environment
-  - branch: main
-  - tags: `v[0-9]*.[0-9]*.[0-9]*`
-- Create readthedocs project
-
-```bash
-git add && git commit -m "init deploy"
-bumpversion patch
-git push && git push --tags
-```
-
-- remember to add dependencies to BOTH `pyproject.toml` and `requirements.txt`
-
----
-
-# bibt-template: BITS Blue Team Utilities: Template Module
+# bibt-gcp-pubsub: BITS Blue Team Utilities: gcp-pubsub Module
 
 - **Developer**: Matthew OBrien
 - **Email**: mobrien@broadinstitute.org
-- **Project URL**: https://pypi.org/project/bibt-template/
-- **Project Repo**: https://github.com/broadinstitute/bibt-template
-- **Project Documentation**: https://bibt-template.readthedocs.io/en/latest/
+- **Project URL**: https://pypi.org/project/bibt-gcp-pubsub/
+- **Project Repo**: https://github.com/broadinstitute/bibt-gcp-pubsub
+- **Project Documentation**: https://bibt-gcp-pubsub.readthedocs.io/en/latest/
 
 ## Installing
 
 ```bash
-$ pip install --upgrade bibt-template
+$ pip install --upgrade bibt-gcp-pubsub
 ```
 
 ## Usage
 
-- See documentation here: https://bibt-template.readthedocs.io/en/latest/
+- See documentation here: https://bibt-gcp-pubsub.readthedocs.io/en/latest/
+
+## All BIBT Libraries
+
+- [bibt-gcp-asset](https://github.com/broadinstitute/bibt-gcp-asset)
+- [bibt-gcp-bq](https://github.com/broadinstitute/bibt-gcp-bq)
+- [bibt-gcp-iam](https://github.com/broadinstitute/bibt-gcp-iam)
+- [bibt-gcp-pubsub](https://github.com/broadinstitute/bibt-gcp-pubsub)
+- [bibt-gcp-scc](https://github.com/broadinstitute/bibt-gcp-scc)
+- [bibt-gcp-secrets](https://github.com/broadinstitute/bibt-gcp-secrets)
+- [bibt-gcp-storage](https://github.com/broadinstitute/bibt-gcp-storage)
+- [bibt-qualys](https://github.com/broadinstitute/bibt-qualys)
+- [bibt-sentinelone](https://github.com/broadinstitute/bibt-sentinelone)
+- [bibt-slack](https://github.com/broadinstitute/bibt-slack)
