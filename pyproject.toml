@@ -20,7 +20,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries",
   "Topic :: Utilities",
 ]
-dependencies = ["google-cloud-pubsub==2.19.0"]
+dependencies = ["google-cloud-pubsub==2.19.0", "python-dateutil==2.8.2"]
 description = "Functionality often used by BITS Blue Team (PubSub module)."
 name = "bibt-gcp-pubsub"
 readme = {file = "README.md", content-type = "text/markdown"}
