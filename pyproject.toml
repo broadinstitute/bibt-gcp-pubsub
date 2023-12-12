@@ -25,7 +25,7 @@ description = "Functionality often used by BITS Blue Team (PubSub module)."
 name = "bibt-gcp-pubsub"
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.7"
-version = "0.0.4"
+version = "0.0.5"
 
 [project.urls]
 "Bug Tracker" = "https://github.com/broadinstitute/bibt-gcp-pubsub/issues"
