@@ -1,6 +1,7 @@
 import json
 import logging
 
+import google.auth.transport.requests
 from google.cloud import pubsub_v1
 
 _LOGGER = logging.getLogger(__name__)
@@ -17,6 +18,12 @@ class Client:
 
     def __init__(self, credentials=None):
         self._client = pubsub_v1.PublisherClient(credentials=credentials)
+
+    def _ensure_valid_client(self):
+        if not self._client._transport._credentials.valid:
+            request = google.auth.transport.requests.Request()
+            self._client._transport._credentials.refresh(request=request)
+        return
 
     def send_pubsub(self, topic_uri, payload):
         """
@@ -51,6 +58,7 @@ class Client:
         if isinstance(payload, dict) or isinstance(payload, list):
             payload = json.dumps(payload, default=str)
         payload_bytes = payload.encode("utf-8")
+        self._ensure_valid_client()
         self._client.publish(topic=topic_uri, data=payload_bytes)
         _LOGGER.info("PubSub sent.")
         return
