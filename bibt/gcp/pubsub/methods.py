@@ -66,10 +66,10 @@ def process_trigger(
     lapsed = datetime.now(timezone.utc) - parse(context.timestamp)
     lapsed = lapsed.total_seconds()
     _LOGGER.info(f"Lapsed time since triggering event: {lapsed:.5f} seconds")
-    if lapsed.total_seconds() > timeout_secs:
+    if lapsed > timeout_secs:
         raise TimeoutError(
             f"Threshold of {timeout_secs} seconds exceeded by "
-            f"{lapsed.total_seconds()-timeout_secs} seconds. Exiting."
+            f"{lapsed-timeout_secs} seconds. Exiting."
         )
 
     if event is not None and "data" in event:
