@@ -2,7 +2,7 @@
 
 [PyPI History](https://pypi.org/project/bibt-gcp-pubsub/#history)
 
-## 0.0.16 (2024-02-07)
+## 0.0.17 (2024-02-07)
 
 - Added `future.result()` to `send_pubsub` call to monitor for errors.
 - Added `process_event()` to handle CloudEvent type triggers.

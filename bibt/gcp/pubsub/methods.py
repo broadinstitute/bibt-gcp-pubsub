@@ -5,7 +5,6 @@ from datetime import timezone
 
 from cloudevents.http import CloudEvent
 from dateutil.parser import parse
-from google.cloud import functions
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -89,7 +88,7 @@ def process_event(
 
 
 def process_trigger(
-    context: functions.Context,
+    context,
     event=None,
     timeout_secs=600,
     decode_bytes=True,
