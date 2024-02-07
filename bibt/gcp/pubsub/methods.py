@@ -62,10 +62,10 @@ def process_event(
     :rtype: :py:class:`str` OR :py:class:`bytes` OR :py:class:`None`
     :returns: the pubsub payload, if present.
     """
-    _LOGGER.info(f"Processing CloudEvent: {event.id}")
+    _LOGGER.info(f"Processing CloudEvent: {event.get('id')}")
     utctime = datetime.now(timezone.utc)
-    eventtime = parse(event.time)
-    _LOGGER.debug(f"PubSub timestamp: [{eventtime}]")
+    eventtime = parse(event.get("time"))
+    _LOGGER.debug(f"CloudEvent timestamp: [{eventtime}]")
     lapsed = utctime - eventtime
     lapsed = lapsed.total_seconds()
     _LOGGER.info(f"Lapsed time since triggering event: {lapsed:.5f} seconds")
