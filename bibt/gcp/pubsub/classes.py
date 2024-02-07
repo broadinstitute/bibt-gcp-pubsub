@@ -78,6 +78,6 @@ class Client:
         payload_bytes = payload.encode("utf-8")
         self._ensure_valid_client()
         future = self._client.publish(topic=topic_uri, data=payload_bytes)
-        future.result()
-        _LOGGER.info("PubSub sent successfully.")
-        return
+        msg_id = future.result()
+        _LOGGER.info(f"PubSub sent successfully, pubsub message ID: [{msg_id}]")
+        return msg_id
