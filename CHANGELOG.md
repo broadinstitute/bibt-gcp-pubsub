@@ -6,6 +6,7 @@
 
 - Added `future.result()` to `send_pubsub` call to monitor for errors.
 - Added `process_event()` to handle CloudEvent type triggers.
+- Reduced default processing timeout from 1800 seconds to 600 seconds.
 
 ## 0.0.8 (2024-01-10)
 
