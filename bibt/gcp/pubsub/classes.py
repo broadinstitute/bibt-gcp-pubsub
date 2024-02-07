@@ -77,6 +77,7 @@ class Client:
             payload = json.dumps(payload, default=str)
         payload_bytes = payload.encode("utf-8")
         self._ensure_valid_client()
-        self._client.publish(topic=topic_uri, data=payload_bytes)
-        _LOGGER.info("PubSub sent.")
+        future = self._client.publish(topic=topic_uri, data=payload_bytes)
+        future.result()
+        _LOGGER.info("PubSub sent successfully.")
         return
