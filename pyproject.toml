@@ -22,7 +22,7 @@ classifiers = [
 dependencies = [
   "google-cloud-pubsub==2.19.0",
   "python-dateutil==2.8.2",
-  "cloudevents==1.10.1",
+  "cloudevents==1.11.0",
   "google-cloud-functions==1.16.0",
 ]
 description = "Functionality often used by BITS Blue Team (PubSub module)."
