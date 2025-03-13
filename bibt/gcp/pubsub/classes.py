@@ -26,18 +26,18 @@ class Client:
             try:
                 credentials = self._client._transport._credentials
             except AttributeError:
-                logging.error("Could not verify credentials in client.")
+                _LOGGER.error("Could not verify credentials in client.")
                 return
         if not credentials.valid or not credentials.expiry:
-            logging.info(
+            _LOGGER.info(
                 "Refreshing client credentials, token expired: "
                 f"[{str(credentials.expiry)}]"
             )
             request = google.auth.transport.requests.Request()
             credentials.refresh(request=request)
-            logging.info(f"New expiration: [{str(credentials.expiry)}]")
+            _LOGGER.info(f"New expiration: [{str(credentials.expiry)}]")
         else:
-            logging.debug(
+            _LOGGER.debug(
                 f"Token is valid: [{credentials.valid}] "
                 f"expires: [{str(credentials.expiry)}]"
             )
